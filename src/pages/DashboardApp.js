@@ -1,7 +1,17 @@
 import { faker } from "@faker-js/faker";
+import { useState } from "react";
 // @mui
 import { useTheme } from "@mui/material/styles";
 import { Grid, Container, Typography } from "@mui/material";
+import AdapterJalaali from "@date-io/jalaali";
+
+import dayjs from "dayjs";
+import TextField from "@mui/material/TextField";
+// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { StaticDateTimePicker } from "@mui/x-date-pickers/StaticDateTimePicker";
+import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+
 // components
 import Page from "../components/Page";
 import Iconify from "../components/Iconify";
@@ -19,16 +29,47 @@ import {
 } from "../sections/@dashboard/app";
 
 // ----------------------------------------------------------------------
+const isWeekend = (date) => {
+  const day = date.day();
 
+  return day === 0 || day === 6;
+};
 export default function DashboardApp() {
   const theme = useTheme();
-
+  const [value, setValue] = useState(dayjs("2022-04-07"));
   return (
     <Page title="Dashboard">
       <Container maxWidth="xl">
         <Typography variant="h4" sx={{ mb: 5 }}>
           Hi, Welcome back
         </Typography>
+
+        <Grid container>
+          <LocalizationProvider dateAdapter={AdapterJalaali}>
+            <StaticDateTimePicker
+              displayStaticWrapperAs="desktop"
+              openTo="year"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
+
+          <LocalizationProvider dateAdapter={AdapterJalaali}>
+            <StaticDatePicker
+              orientation="landscape"
+              openTo="day"
+              value={value}
+              shouldDisableDate={isWeekend}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
+        </Grid>
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
