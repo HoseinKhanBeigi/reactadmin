@@ -69,30 +69,30 @@ export default function Login() {
 
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-              Don’t have an account? {''}
+              اگر ثبت نام نکرده اید {''}
               <Link variant="subtitle2" component={RouterLink} to="/register">
-                Get started
+                شروع کنید
               </Link>
             </Typography>
           )}
         </HeaderStyle>
 
-        {mdUp && (
+        {/* {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
               Hi, Welcome Back
             </Typography>
             <img src="/static/illustrations/illustration_login.png" alt="login" />
           </SectionStyle>
-        )}
+        )} */}
 
         <Container maxWidth="sm">
           <ContentStyle>
-            <Typography variant="h4" gutterBottom>
+            {/* <Typography variant="h4" gutterBottom>
               Sign in to Minimal
-            </Typography>
+            </Typography> */}
 
-            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Enter your details below.</Typography>
+            {/* <Typography sx={{ color: 'text.secondary', mb: 5 }}>Enter your details below.</Typography> */}
 
             <AuthSocial />
 

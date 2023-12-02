@@ -44,32 +44,7 @@ export default function DashboardApp() {
           Hi, Welcome back
         </Typography>
 
-        <Grid container>
-          <LocalizationProvider dateAdapter={AdapterJalaali}>
-            <StaticDateTimePicker
-              displayStaticWrapperAs="desktop"
-              openTo="year"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-
-          <LocalizationProvider dateAdapter={AdapterJalaali}>
-            <StaticDatePicker
-              orientation="landscape"
-              openTo="day"
-              value={value}
-              shouldDisableDate={isWeekend}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-        </Grid>
+   
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>

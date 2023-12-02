@@ -98,6 +98,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     <RootStyle>
       {!isDesktop && (
         <Drawer
+  
           open={isOpenSidebar}
           onClose={onCloseSidebar}
           PaperProps={{
@@ -111,6 +112,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       {isDesktop && (
         <Drawer
           open
+          anchor='right'
           variant="persistent"
           PaperProps={{
             sx: {

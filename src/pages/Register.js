@@ -68,30 +68,30 @@ export default function Register() {
           <Logo />
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-              Already have an account? {''}
+               اگر قبلا ثبت نام کرده اید ؟
               <Link variant="subtitle2" component={RouterLink} to="/login">
-                Login
+             {' '}ورود 
               </Link>
             </Typography>
           )}
         </HeaderStyle>
 
-        {mdUp && (
+        {/* {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
               Manage the job more effectively with Minimal
             </Typography>
             <img alt="register" src="/static/illustrations/illustration_register.png" />
           </SectionStyle>
-        )}
+        )} */}
 
         <Container>
           <ContentStyle>
-            <Typography variant="h4" gutterBottom>
+            {/* <Typography variant="h4" gutterBottom>
               Get started absolutely free.
-            </Typography>
+            </Typography> */}
 
-            <Typography sx={{ color: 'text.secondary', mb: 5 }}>Free forever. No credit card needed.</Typography>
+            {/* <Typography sx={{ color: 'text.secondary', mb: 5 }}>Free forever. No credit card needed.</Typography> */}
 
             <AuthSocial />
 
