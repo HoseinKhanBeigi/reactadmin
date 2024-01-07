@@ -37,7 +37,6 @@ export default function DashboardLayout() {
 
   return (
     <RootStyle>
-
       <MainStyle>
         <Outlet />
       </MainStyle>
